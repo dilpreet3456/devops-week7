@@ -23,6 +23,9 @@ resource "aws_instance" "infra_demo" {
     Environment = "dev"
   }
 }
+resource "random_id" "bucket_id" {
+  byte_length = 4
+}
 
 resource "aws_s3_bucket" "demo_bucket" {
   bucket = "dilpreet-week7-${random_id.bucket_id.hex}"
@@ -32,5 +35,12 @@ resource "aws_s3_bucket" "demo_bucket" {
     Project     = "week7"
     Owner       = "dilpreet"
     Environment = "dev"
+  }
+}
+terraform {
+  required_providers {
+    random = {
+      source = "hashicorp/random"
+    }
   }
 }
