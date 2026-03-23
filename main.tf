@@ -25,12 +25,12 @@ resource "aws_instance" "infra_demo" {
 }
 
 resource "aws_s3_bucket" "demo_bucket" {
-  bucket = "Dilpreet-week7-demo-bucket-12345"  # must be globally unique
+  bucket = "dilpreet-week7-${random_id.bucket_id.hex}"
 
   tags = {
     Name        = "week7-bucket"
     Project     = "week7"
-    Owner       = "Dilpreet"
+    Owner       = "dilpreet"
     Environment = "dev"
   }
 }
