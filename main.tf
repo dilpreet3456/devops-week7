@@ -25,7 +25,7 @@ resource "aws_instance" "infra_demo" {
 }
 
 resource "aws_s3_bucket" "demo_bucket" {
-  bucket = "prashant-week7-demo-bucket-12345"  # must be globally unique
+  bucket = "Dilpreet-week7-demo-bucket-12345"  # must be globally unique
 
   tags = {
     Name        = "week7-bucket"
