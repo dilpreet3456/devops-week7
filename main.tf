@@ -19,7 +19,18 @@ resource "aws_instance" "infra_demo" {
   tags = {
     Name        = "infra-demo"
     Project     = "week7"
-    Owner       = "prashant"
+    Owner       = "Dilpreet"
+    Environment = "dev"
+  }
+}
+
+resource "aws_s3_bucket" "demo_bucket" {
+  bucket = "prashant-week7-demo-bucket-12345"  # must be globally unique
+
+  tags = {
+    Name        = "week7-bucket"
+    Project     = "week7"
+    Owner       = "Dilpreet"
     Environment = "dev"
   }
 }
